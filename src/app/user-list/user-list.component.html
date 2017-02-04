@@ -1,0 +1,12 @@
+
+<input #nfilter type="text" (keyup)="0" />
+<table border="1px" *ngIf="users">
+    <thead>
+    <th (click)="sortField('name')">User</th><th (click)="sortField('age')">Age</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users | namefilter: nfilter.value">
+        <td><a routerLink="/user/{{user.id}}">{{user.name}}</a></td><td>{{user.age}}</td>
+    </tr>
+    </tbody>
+</table>
