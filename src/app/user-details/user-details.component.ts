@@ -13,8 +13,7 @@ import { User } from '../user';
     providers:[Services]
 })
 export class UserDetailsComponent implements OnInit {
-
-
+    
     user: User;
     constructor(
         private services: Services,
@@ -23,9 +22,7 @@ export class UserDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.params
-            .switchMap( (params: Params) => this.services.getUser( +params['id'] ) )
+            .switchMap( (params: Params) => this.services.getUser( params['id']))
             .subscribe(user => this.user = user);
     };
-
-
 }

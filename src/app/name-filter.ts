@@ -6,7 +6,7 @@ import {Pipe} from '@angular/core';
 })
 export class NameFilter {
   transform(value, [input]) {
-      return value.filter((user) => user.name.startsWith(input));
+      return value.filter((user) => input ? user.name.startsWith(input) : true);
   }
 
 }

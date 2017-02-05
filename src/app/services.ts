@@ -15,7 +15,7 @@ export class Services {
             .then(response => response.json().result as User[])
             .catch(this.handleError);
     }
-    getUser(id: number): Promise<User> {
+    getUser(id: string): Promise<User> {
         return this.getUsers()
             .then(users => users.find(user => user.id === id));
     }
