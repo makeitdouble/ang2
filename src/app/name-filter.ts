@@ -11,7 +11,7 @@ export class NameFilter {
                 argsArr.push(args[i]);
             }
             var filter = argsArr.join('');
-            return value.filter(user => user.name.toLocaleLowerCase().indexOf(filter) != -1);
+            return value.filter(user => user.name.toLocaleLowerCase().indexOf(filter) > -1);
         }
         return value;
     }
