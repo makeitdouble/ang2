@@ -3,6 +3,7 @@ i{
 }
 th{
     font-weight: 100;
+    width:150px;
 }
 th.sortable{
     cursor: pointer;
