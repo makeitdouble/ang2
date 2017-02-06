@@ -3,7 +3,7 @@
 </div>
 <table *ngIf="users">
     <thead>
-    <th *ngFor="let field of fields" (click)="sortField(field)" [ngClass]="field !== 'photo' ? 'sortable' : ''">{{field}}
+    <th *ngFor="let field of fields" (click)="sortField(field)" class="sortable">{{field}}
         <i *ngIf="sortParams.field === field" class="material-icons" [ngClass]="sortParams.asc ? 'desc' : 'asc'"></i>
     </th>
     </thead>
