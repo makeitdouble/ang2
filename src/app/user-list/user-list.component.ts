@@ -14,7 +14,9 @@ export class UserListComponent {
     constructor(private services: Services) { }
 
     users: User[];
+    fields = ['photo', 'name', 'surname', 'age', 'city', 'sex'];
     totalAge: number = 0;
+    totalUsers: number = 0;
     maleCounter: number = 0;
     femaleCounter: number = 0;
 
@@ -61,7 +63,8 @@ export class UserListComponent {
     renderInfo(users: User[]): void {
 
         this.users = users;
-
+        this.totalUsers = users.length;
+        
         for (let i = 0; i < users.length; i++){
             this.totalAge += +users[i].age;
             

@@ -1,30 +1,10 @@
-<span>Avarage age: {{totalAge}} | Male: {{maleCounter}} | Female: {{femaleCounter}}</span>
+<span>Avarage age: {{totalAge}} | Male: {{maleCounter}} | Female: {{femaleCounter}} | Total users: {{totalUsers}}</span>
 <div class="filter">Name filter: <input #nfilter type="text" (keyup)="0" />
 </div>
 <table *ngIf="users">
     <thead>
-    <th>
-        Photo
-    </th>
-    <th (click)="sortField('name')" class="sortable">
-        Name
-        <i *ngIf="sortParams.field === 'name'" class="material-icons" [ngClass]="sortParams.asc ? 'desc' : 'asc'"></i>
-    </th>
-    <th (click)="sortField('surname')" class="sortable">
-        Surname
-        <i *ngIf="sortParams.field === 'surname'" class="material-icons" [ngClass]="sortParams.asc ? 'desc' : 'asc'"></i>
-    </th>
-    <th (click)="sortField('age')" class="sortable">
-        Age
-        <i *ngIf="sortParams.field === 'age'" class="material-icons" [ngClass]="sortParams.asc ? 'desc' : 'asc'"></i>
-    </th>
-    <th (click)="sortField('city')" class="sortable">
-        City
-        <i *ngIf="sortParams.field === 'city'" class="material-icons" [ngClass]="sortParams.asc ? 'desc' : 'asc'"></i>
-    </th>
-    <th (click)="sortField('sex')" class="sortable">
-        Sex
-        <i *ngIf="sortParams.field === 'sex'" class="material-icons" [ngClass]="sortParams.asc ? 'desc' : 'asc'"></i>
+    <th *ngFor="let field of fields" (click)="sortField(field)" [ngClass]="field !== 'photo' ? 'sortable' : ''">{{field}}
+        <i *ngIf="sortParams.field === field" class="material-icons" [ngClass]="sortParams.asc ? 'desc' : 'asc'"></i>
     </th>
     </thead>
     <tbody>
