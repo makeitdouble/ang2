@@ -1,15 +1,16 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import {Pipe} from '@angular/core';
 
 @Pipe({
   name: 'namefilter'
 })
-export class NameFilter implements PipeTransform {
+export class NameFilter {
     transform(value: any, args: string[]): any {
-       /* return users.filter((user) => input ? user.name.startsWith(input) : true); */
-     /* */
-        if (args[0]){
-            let filter = args[0].toLocaleLowerCase();
-            console.log(filter);
+        if (args){
+            var argsArr = [];
+            for (var i = 0; i < args.length; i++) {
+                argsArr.push(args[i]);
+            }
+            var filter = argsArr.join('');
             return value.filter(user => user.name.toLocaleLowerCase().indexOf(filter) != -1);
         }
         return value;
