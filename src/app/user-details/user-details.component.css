@@ -1,0 +1,41 @@
+.userinfo{
+    padding:20px;
+}
+.userinfo:after{
+    content:"";
+    display: table;
+    clear:both;
+}
+
+.userinfo .photo{
+    float: left;
+    width: 30%;
+}
+
+.userinfo{
+    font-size: 16px;
+    color:grey;
+}
+
+.userinfo .info{
+    float: left;
+    width:70%;
+    padding-left: 20px;
+}
+.userinfo .info td{
+    vertical-align: top;
+    padding: 10px 0;
+    border-bottom: 1px dashed grey;
+}
+.userinfo .info .first{
+    width:120px;
+    color:grey;
+}
+
+.description{
+    padding:20px;
+}
+
+.photo img{
+    width:100%;
+}

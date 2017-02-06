@@ -1,6 +1,6 @@
 {"result":[
-    {"id": "1", "name":"test", "age": 35},
-    {"id": "2", "name":"te111st", "age": 34},
-    {"id": "3", "name":"aaaest3", "age": 32},
-    {"id": "4", "name":"qqqqq", "age": 1}
+  {"id": "1", "name":"John", "surname": "Smith", "photo": "1.jpg", "age": 35, "city": "Kiev", "sex": "male", "description": "Some info about his smile", "work": "teacher"},
+  {"id": "2", "name":"Lora", "surname": "Palmer", "photo": "2.jpg", "age": 25, "city": "Donetsk", "sex": "female", "description": "Some info about Lora and her father", "work": "teacher"},
+  {"id": "3", "name":"Nicolas", "surname": "Cage", "photo": "3.jpg", "age": 45, "city": "New Orlean", "sex": "male", "description": "Some info about this actor", "work": "actor"},
+  {"id": "4", "name":"Jason", "surname": "Woorhees", "photo": "4.jpg", "age": 31, "city": "unknown", "sex": "male", "description": "Some info about this man", "work": "maniac"}
 ]}

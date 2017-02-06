@@ -9,7 +9,6 @@ import { AppComponent }         from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import {NameFilter} from "./name-filter";
-import { SearchBox } from './search-box';
 
 @NgModule({
 
@@ -23,8 +22,7 @@ import { SearchBox } from './search-box';
         AppComponent,
         UserListComponent,
         UserDetailsComponent,
-        NameFilter,
-        SearchBox
+        NameFilter
     ],
 
   providers: [Services],

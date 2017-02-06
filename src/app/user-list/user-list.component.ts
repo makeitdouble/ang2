@@ -1,8 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { User } from '../user'
 import { Services } from '../services';
-
-
 
 @Component({
   selector: 'user-list',
@@ -13,7 +11,13 @@ import { Services } from '../services';
 })
 export class UserListComponent {
 
-    @Input() name;
+    constructor(private services: Services) { }
+
+    users: User[];
+    totalAge: number = 0;
+    maleCounter: number = 0;
+    femaleCounter: number = 0;
+
     sortParams: { "field": string, "asc": boolean } = { "field": null, "asc": true};
 
     sortField(field: string): void {
@@ -54,10 +58,24 @@ export class UserListComponent {
         }
     }
 
-    constructor(private services: Services) { }
+    renderInfo(users: User[]): void {
+
+        this.users = users;
+
+        for (let i = 0; i < users.length; i++){
+            this.totalAge += +users[i].age;
+            
+            if( users[i].sex === 'male' ){
+                this.maleCounter++;
+            }else{
+                this.femaleCounter++;
+            }
+        }
+        this.totalAge = this.totalAge / users.length;
+    }
+
     ngOnInit(): void {
         this.services.getUsers()
-            .then(users => this.users = users);
+            .then(users => this.renderInfo(users));
     }
-    users: User[];
 }

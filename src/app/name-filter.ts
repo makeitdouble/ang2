@@ -5,8 +5,12 @@ import {Pipe} from '@angular/core';
     pure: false
 })
 export class NameFilter {
-  transform(value, [input]) {
-      return value.filter((user) => input ? user.name.startsWith(input) : true);
+  transform(users, [input]) {
+       /* return users.filter((user) => input ? user.name.startsWith(input) : true); */
+     /* */
+      if (input){
+          return users.filter((user) => user.name.toLowerCase().indexOf(input.toLowerCase()) > -1);
+      }
+      return users;
   }
-
 }

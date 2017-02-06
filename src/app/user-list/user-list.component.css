@@ -1,0 +1,26 @@
+i{
+    vertical-align: middle;
+}
+th{
+    font-weight: 100;
+}
+th.sortable{
+    cursor: pointer;
+    font-weight: 600;
+}
+.asc:before{
+    content:'arrow_drop_up';
+}
+.desc:before{
+    content:'arrow_drop_down';
+}
+.photo{
+    width:100px;
+}
+.photo img{
+    width:100%;
+}
+
+td{
+    text-align: center;
+}
